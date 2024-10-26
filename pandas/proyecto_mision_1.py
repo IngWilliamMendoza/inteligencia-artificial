@@ -1,8 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from IPython.core.pylabtools import figsize
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score
+
+from IPython.core.pylabtools import figsize
 
 df_edad_precio_seguro = pd.read_csv('../Data_sets/dataset_edad_precio_seguro.csv')
 
