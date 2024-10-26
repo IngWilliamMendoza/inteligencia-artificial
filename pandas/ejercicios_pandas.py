@@ -47,10 +47,29 @@ df_titanic = pd.read_csv('../Data_sets/titanic.csv')
 #print(df_titanic.dtypes)
 
 # convertir un dataFrame a excel
-df_titanic.to_excel("../Data_sets/titanic.xlsx", sheet_name='passengers', index=False )
-df_titanic_excel = pd.read_excel("../Data_sets/titanic.xlsx", sheet_name='passengers')
-print(df_titanic_excel)
+# df_titanic.to_excel("../Data_sets/titanic.xlsx", sheet_name='passengers', index=False )
+# df_titanic_excel = pd.read_excel("../Data_sets/titanic.xlsx", sheet_name='passengers')
+# print(df_titanic_excel)
 
 # ver un resumen tecnico de un DataFrame
+#print(df_titanic.info())
+
+# obtener el numero de filas y columnas de un dataFrame
+# print(f"numero de filas y columnas {df_titanic.shape}")
+# print(f"numero de filas del Series Age {df_titanic['Age'].shape}")
+
+# crear un dataFrame apartir de un dataFrame, solo tomara las 5 primeras filas
+# df_age_sex = df_titanic[["Age", "Sex"]].head(5)
+# print(df_age_sex)
+
+# crear un dataFrame filtrando los valores
+
+# df_above_35 = df_titanic[df_titanic["Age"] > 35]
+# print(df_above_35)
+
+# filtrar un dataFrame con el condicional isIn()
+df_titanic_class23 = df_titanic[df_titanic['Pclass'].isin([2,3])]
+print(df_titanic_class23)
+
 
 
