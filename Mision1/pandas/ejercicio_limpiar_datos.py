@@ -9,6 +9,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import LabelEncoder
 
 # documentacion preprocessing ->  https://scikit-learn.org/1.5/modules/preprocessing.html
 # documentacion imputer -> https://scikit-learn.org/1.5/modules/generated/sklearn.impute.SimpleImputer.html
@@ -24,3 +25,8 @@ y = df_data.iloc[:, 3].values
 imputer = SimpleImputer(missing_values = np.nan, strategy = "mean" )
 imputer = imputer.fit(X[:, 1:3])
 X[:, 1:3] = imputer.transform(X[:, 1:3])
+
+# Codificar datos categoricos
+laberencoder_X = LabelEncoder()
+X[:, 0] = laberencoder_X.fit_transform(X[:, 0])
+
